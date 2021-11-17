@@ -20,9 +20,17 @@ public class TelaDeInicio extends JFrame implements ActionListener{
 		setVisible(true);
 		
 		entrar = new JButton("Entrar");
-		entrar.setBounds(400, 400, 350, 50);
+		entrar.setBounds(350, 550, 350, 50);
 		entrar.setForeground(Color.decode("#1E5128"));
 		entrar.addActionListener(this);
+		
+		bemvindo = new JLabel("Bem-Vindo");
+		bemvindo.setBounds(420, 100, 400, 50);
+		bemvindo.setFont(new Font("Roboto", Font.PLAIN, 48));
+		bemvindo.setBackground(Color.black);
+		
+		add(entrar);
+		add(bemvindo);
 	}
 	
 	public void actionPerformed(ActionEvent e) {
