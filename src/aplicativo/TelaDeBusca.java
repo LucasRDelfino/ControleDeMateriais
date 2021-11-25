@@ -15,7 +15,7 @@ public class TelaDeBusca extends JFrame {
 	private ResultSet rs;
 	materiaisDAO dao;
 	Color verdeEscuro = new Color(43, 87, 38);
-	JButton adicionar,buscar;
+	JButton adicionar,buscar,inicio;
 	JLabel lb1,lb2,lb3,lb4;
 	JTextField nome;
 	String sql = "SELECT * FROM limateriais";
@@ -77,6 +77,13 @@ public class TelaDeBusca extends JFrame {
 	    adicionar.setForeground(Color.decode("#1E5128"));
 		add(adicionar);
 		
+		inicio = new JButton("Inicio");
+		inicio.setBounds(390, 340, 125, 40);
+		inicio.setFont( new Font("Lucida Bright Demibold", Font.BOLD, 15) );
+		add(inicio);
+		inicio.setBackground(Color.decode("#1E5128"));
+		inicio.setForeground(Color.white);
+		
 		
 		setFont(new Font("Arial", Font.PLAIN, 12));
 		scrollTable = new JScrollPane();
@@ -114,6 +121,13 @@ public class TelaDeBusca extends JFrame {
 			
 				
 			}
+		});
+		inicio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e){
+				new TelaDeInicio().setVisible(true);				
+				  setVisible(false);
+				 
+            }
 		});
 		
 

@@ -18,7 +18,7 @@ public class TelaDeAdicao extends JFrame {
 	private ResultSet rs;
 	materiaisDAO dao;
 	Color verdeEscuro = new Color(43, 87, 38);
-	JButton adicionar,atualizar;
+	JButton adicionar,atualizar,inicio;
 	JLabel lb1,lb2,lb3;
 	JTextField nome,qtd;
 	String sql = "SELECT * FROM limateriais";
@@ -75,15 +75,23 @@ public class TelaDeAdicao extends JFrame {
 		add(qtd);	
 		
 		adicionar = new JButton("Adicionar");
-		adicionar.setBounds(110, 350, 125, 35);
+		adicionar.setBounds(70, 350, 125, 35);
 		adicionar.setFont( new Font("Lucida Bright Demibold", Font.BOLD, 15) );
 		add(adicionar);
 		adicionar.setBackground(Color.decode("#1E5128"));
 		adicionar.setForeground(Color.white);
 		
+		inicio = new JButton("Inicio");
+		inicio.setBounds(390, 350, 125, 35);
+		inicio.setFont( new Font("Lucida Bright Demibold", Font.BOLD, 15) );
+		add(inicio);
+		inicio.setBackground(Color.decode("#1E5128"));
+		inicio.setForeground(Color.white);
+		
+		
 		
 		atualizar = new JButton("Atualizar");
-		atualizar.setBounds(310, 350, 125, 35);
+		atualizar.setBounds(230, 350, 125, 35);
 		atualizar.setFont( new Font("Lucida Bright Demibold", Font.BOLD, 15) );
 		add(atualizar);
 		atualizar.setBackground(Color.decode("#1E5128"));
@@ -112,7 +120,7 @@ public class TelaDeAdicao extends JFrame {
 	        try {
 	            st = dao.bd.c.prepareStatement(sql);
 	            rs= st.executeQuery();
-	            DefaultTableModel tableModel = new DefaultTableModel(new String[] { "Id", "Nome","Quantidade" }, 0) {
+	            DefaultTableModel tableModel = new DefaultTableModel(new String[] { "Nome","Quantidade" }, 0) {
 	            	
 	                public boolean isCellEditable(int row, int col) {
 	                    return false;
@@ -180,6 +188,13 @@ public class TelaDeAdicao extends JFrame {
 				
                  
                 }
+            }
+		});
+		inicio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e){
+				new TelaDeInicio().setVisible(true);				
+				  setVisible(false);
+				 
             }
 		});
 		

@@ -25,7 +25,7 @@ public class TelaDeRemocao extends JFrame{
 	private int rs2;
 	materiaisDAO dao;
 	Color verdeEscuro = new Color(43, 87, 38);
-	JButton deletar;
+	JButton deletar,inicio;
 	JLabel lb1,lb2,lb3;
 
 	
@@ -54,12 +54,19 @@ public class TelaDeRemocao extends JFrame{
 		add(lb1);
 		
 		
-		deletar = new JButton("DELETAR");
-		deletar.setBounds(220, 294, 125, 50);
+		deletar = new JButton("Deletar");
+		deletar.setBounds(120, 294, 125, 50);
 		deletar.setFont( new Font("Lucida Bright Demibold", Font.BOLD, 15) );
 		add(deletar);
 		deletar.setBackground(Color.decode("#1E5128"));
 		deletar.setForeground(Color.white);
+		
+		inicio = new JButton("Inicio");
+		inicio.setBounds(290, 294, 125, 50);
+		inicio.setFont( new Font("Lucida Bright Demibold", Font.BOLD, 15) );
+		add(inicio);
+		inicio.setBackground(Color.decode("#1E5128"));
+		inicio.setForeground(Color.white);
 		
 		
 		
@@ -98,6 +105,13 @@ public class TelaDeRemocao extends JFrame{
 				
                  
                 }
+            }
+		});
+		inicio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e){
+				new TelaDeInicio().setVisible(true);				
+				  setVisible(false);
+				 
             }
 		});
 		
